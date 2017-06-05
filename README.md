@@ -8,7 +8,7 @@ I've also tried to structure it in a way that it can be stand alone or dropped/m
 solely as the front-end of that application (such as a Node.js or PHP application) however if you're a beginner;
 don't worry about that part.
 
-# What's it got?
+## What's it got?
 
 `simple-react-starterkit` provides a environment for you to start writing a React application in - if you haven't had
 the experience with setting up the tooling/workspace for a React app before, then hopefully this can help you out.
@@ -28,12 +28,12 @@ groundwork for what this project is and helped me to start out when I was settin
 If you're here for learning react however, you should just be able to jump right into the [React documentation](https://facebook.github.io/react/docs/hello-world.html).
 Eventually you'll want to understand the environment though, but of course that can wait till a rainy day.
 
-# Pre-requisites
+## Pre-requisites
 
 * [Node.js](https://nodejs.org) installed.
 * A good understanding of Javascript will help.
 
-# Setup
+## Setup
 
 1. Install [Node.js](https://nodejs.org) if you haven't already.
 2. Open your command line and navigate to the project. (['Shift + Right Click' in explorer -> 'Open Command Line/Powershell here'](http://i.imgur.com/6FJcydX.png))
@@ -43,12 +43,12 @@ Eventually you'll want to understand the environment though, but of course that 
 6. You should (hopefully) get a page in your browser with some text on it and stuff.
 7. Start building your React app!
 
-# Commands
+## Commands
 
-* `npm run dev` Builds the src directory and then starts a watch. Any changes within the src folder will be recompiled and you can just reload your browser window.
+* `npm run dev` Builds the `src` directory and then starts a watch. Any changes within the `src` folder will be recompiled and you can just reload your browser window.
 * `npm run build` Builds a 'production' version of the bundles that can be deployed to a website.
 
-# After setting up
+## After setting up
 
 * Check out the [Official React Tutorial](https://facebook.github.io/react/tutorial/tutorial.html#overview) and [Documentation](https://facebook.github.io/react/docs/hello-world.html). It's really helpful and should keep you on the right track.
 * Optionally, install the [React Developer Tools](https://chrome.google.com/webstore/detail/fmkadmapgofadopljbjfkapdkoienihi) for Chrome.
@@ -56,12 +56,11 @@ Eventually you'll want to understand the environment though, but of course that 
 * I've also left some comments in the `src` files which hopefully help.
 * Most importantly experiment! Try things - it doesn't have to be perfect first time, it just has to work!
 
-# Contributing
+## Contributing
 
-If you have an issue with the project, please create and issue for it.
+If you have an issue with the project, please [create an issue for it](https://github.com/South-Paw/simple-react-starterkit/issues).
 
-If you think I've missed something or something can be done better, by all means submit a pull request or raise an
-issue in the project.
+If you think I've missed something or something can be done better, by all means [submit a pull request](https://github.com/South-Paw/simple-react-starterkit/pulls) or [raise an issue in the project](https://github.com/South-Paw/simple-react-starterkit/issues).
 
-# License
+## License
 [MIT](https://github.com/South-Paw/simple-react-starterkit/blob/master/LICENSE)
