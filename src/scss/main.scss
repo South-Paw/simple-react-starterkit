@@ -1,0 +1,41 @@
+/**
+ * Imports for other partials, mixins and more can be placed in this file.
+ * Check out the Sass guide if this is your first time using it:
+ * http://sass-lang.com/guide
+ */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  line-height: 20px;
+}
+
+code {
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 4px;
+  background: #f2f2f2;
+  color: #b72d2d;
+  border-radius: 4px;
+}
+
+kbd {
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 4px;
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.links {
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+  font-size: 12px;
+}

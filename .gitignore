@@ -1,0 +1,12 @@
+# Project workspaces
+dist/css/bundle.css
+dist/js/bundle.js
+
+# Dependencies
+node_modules
+
+# Error logs
+npm-debug.log*
+
+# Misc files
+.DS_Store
