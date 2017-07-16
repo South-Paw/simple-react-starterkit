@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, 'dist/');
@@ -16,25 +17,25 @@ var config = {
   },
   module: {
     loaders: [{
-        test: /\.jsx?/,
-        include: APP_DIR,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?importLoaders=1',
-        }),
-      },
-      {
-        test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-      }
-    ]
+      test: /\.jsx?/,
+      include: APP_DIR,
+      loader: 'babel-loader'
+    },
+    {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract({
+        loader: 'css-loader?importLoaders=1',
+      }),
+    },
+    {
+      test: /\.(sass|scss)$/,
+      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+    }]
   },
   plugins: [
+    //new CleanWebpackPlugin(['dist/css', 'dist/js']),
     new ExtractTextPlugin({
-      filename: '/css/bundle.css',
+      filename: 'css/bundle.css',
       allChunks: true
     })
   ]
