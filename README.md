@@ -38,10 +38,19 @@ Eventually you'll want to understand the environment though, but of course that 
 1. Install [Node.js](https://nodejs.org) if you haven't already.
 2. Open your command line and navigate to the project. (['Shift + Right Click' in explorer -> 'Open Command Line/Powershell here'](http://i.imgur.com/6FJcydX.png))
 3. Do `npm install` to fetch [npm](https://www.npmjs.com/) dependencies.
-4. Do `npm run dev` to build the existing `src`.
-5. Open `index.html` in the `dist` folder.
-6. You should (hopefully) get a page in your browser with some text on it and stuff.
-7. Start building your React app!
+
+### Running locally
+
+1. Do `npm run dev` to start a local development server.
+2. On your browser, navigate to `localhost:8080`.
+3. You should (hopefully) get a page in your browser with some text on it and stuff.
+4. Start building your React app! (When you make changes, it will automatically be reflected on your browser.)
+
+### Building for production
+
+1. When you've finished building your React app, do run `npm run build` to create a production-ready build of your React app. (**TODO:** possibly compress the compiled CSS/JS for the production build?)
+2. Put the generated files (should be inside the `dist/` folder) on your web server.
+3. You're done!
 
 ## Commands
 
