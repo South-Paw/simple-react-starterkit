@@ -15,7 +15,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --config=webpack.config.js",
+    "dev": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/cross-env WEBPACK_ENV=build ./node_modules/.bin/webpack",
     "test": "karma start",
     "test:ci": "watch 'npm run test' src/"
