@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
@@ -63,10 +64,12 @@ let config = {
       {
         test: /(\.jsx|\.js)$/,
         exclude: [/(node_modules|bower_components)/],
-        use: 'babel-loader',
-        options: {
-          presets: ['react', 'es2015']
-        }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'es2015']
+          }
+        },
       },
       {
         test: /(\.jsx|\.js)$/,
