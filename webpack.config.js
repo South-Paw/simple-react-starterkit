@@ -75,15 +75,18 @@ let config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract(env === 'dev' ?
-          [{loader: 'css-loader', options: {importLoaders: 1}}] :
-          [{loader: 'css-loader', options: {importLoaders: 1}}, postcssConfig])
+        use: ExtractTextPlugin.extract(
+          env === 'dev'
+            ? [{ loader: 'css-loader', options: { importLoaders: 1 } }]
+            : [{ loader: 'css-loader', options: { importLoaders: 1 } }, postcssConfig]
+        )
       },
       {
         test: /\.(sass|scss)$/,
-        use: ExtractTextPlugin.extract(env === 'dev' ?
-          ['css-loader', 'sass-loader'] :
-          ['css-loader', postcssConfig, 'sass-loader']
+        use: ExtractTextPlugin.extract(
+          env === 'dev'
+            ? ['css-loader', 'sass-loader']
+            : ['css-loader', postcssConfig, 'sass-loader']
         )
       }
     ]
