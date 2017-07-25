@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
@@ -37,6 +38,7 @@ var outputFile;
 var outputCssFile;
 
 if (env === 'build') {
+  plugins.push(new CleanWebpackPlugin(['dist']));
   plugins.push(new CopyWebpackPlugin([
     {from: APPLICATION_BASEPATH + '/index.html', to: 'dist/index.html'}
   ]));
