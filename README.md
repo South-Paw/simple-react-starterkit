@@ -73,6 +73,4 @@ If you think I've missed something or something can be done better, by all means
 
 # TODO
 
-* Minify the build task's CSS files.
-* Combine the `index.html` into the `dist` folder so it's easy to copy `dist` straight to web server. (It could be generated with the build task + have a hash added or it could be in there already).
 * Add/improve default example tests.

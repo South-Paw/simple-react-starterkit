@@ -7,6 +7,14 @@ npm-debug.log*
 # Dependencies
 /node_modules
 
+# npm lockfile.
+#
+# Ideally, you should include this on your own repo (to make sure your team
+# members have the same version of all packages), but we've decided not to
+# include it here since it's a starter kit. Do comment this out when you're
+# pushing to your own repo, though.
+/package-lock.json
+
 # Misc files
 .DS_Store
 .env.local

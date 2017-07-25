@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
@@ -12,8 +14,23 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 // Remember: If you change this, you'll need to adjust the `examples/index.html` link's as well.
 var YOUR_APPLICATIONS_NAME = 'app';
 
+// The base path of your application (where the `index.html` file is located).
+var APPLICATION_BASEPATH = path.join(__dirname, 'example');
+
 // Modify this to change the dev server port.
 var DEV_SERVER_PORT = '8080';
+
+// PostCSS configuration.
+// Learn more about what it does here: http://postcss.org/
+var postcssConfig = {
+  loader: 'postcss-loader',
+  options: {
+    plugins: (loader) => [
+      require('autoprefixer')({ browsers: ['last 2 versions'] }),
+      require('cssnano')()
+    ]
+  }
+};
 
 var devtools = '';
 var plugins = [];
@@ -21,6 +38,10 @@ var outputFile;
 var outputCssFile;
 
 if (env === 'build') {
+  plugins.push(new CleanWebpackPlugin(['dist']));
+  plugins.push(new CopyWebpackPlugin([
+    {from: APPLICATION_BASEPATH + '/index.html', to: BUILD_DIR + '/index.html'}
+  ]));
   plugins.push(new UglifyJsPlugin({ minimize: true }));
 
   outputFile = YOUR_APPLICATIONS_NAME + '.min.js';
@@ -51,25 +72,33 @@ let config = {
       {
         test: /(\.jsx|\.js)$/,
         exclude: [/(node_modules|bower_components)/],
-        loader: 'babel-loader',
-        options: {
-          presets: ['react', 'es2015']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'es2015']
+          }
         }
       },
       {
         test: /(\.jsx|\.js)$/,
         exclude: [/node_modules/],
-        loader: 'eslint-loader'
+        use: 'eslint-loader'
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?importLoaders=1'
-        })
+        use: ExtractTextPlugin.extract(
+          env === 'dev'
+            ? [{ loader: 'css-loader', options: { importLoaders: 1 } }]
+            : [{ loader: 'css-loader', options: { importLoaders: 1 } }, postcssConfig]
+        )
       },
       {
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        use: ExtractTextPlugin.extract(
+          env === 'dev'
+            ? ['css-loader', 'sass-loader']
+            : ['css-loader', postcssConfig, 'sass-loader']
+        )
       }
     ]
   },
@@ -79,7 +108,7 @@ let config = {
   devtool: devtools,
   plugins: plugins,
   devServer: {
-    contentBase: path.join(__dirname, 'example'),
+    contentBase: APPLICATION_BASEPATH,
     compress: true,
     port: DEV_SERVER_PORT
   }
