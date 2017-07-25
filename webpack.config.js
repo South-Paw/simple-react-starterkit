@@ -40,7 +40,7 @@ var outputCssFile;
 if (env === 'build') {
   plugins.push(new CleanWebpackPlugin(['dist']));
   plugins.push(new CopyWebpackPlugin([
-    {from: APPLICATION_BASEPATH + '/index.html', to: 'dist/index.html'}
+    {from: APPLICATION_BASEPATH + '/index.html', to: BUILD_DIR + '/index.html'}
   ]));
   plugins.push(new UglifyJsPlugin({ minimize: true }));
 
