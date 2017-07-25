@@ -13,6 +13,9 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 // Remember: If you change this, you'll need to adjust the `examples/index.html` link's as well.
 var YOUR_APPLICATIONS_NAME = 'app';
 
+// The base path of your application (where the `index.html` file is located).
+var APPLICATION_BASEPATH = path.join(__dirname, 'example');
+
 // Modify this to change the dev server port.
 var DEV_SERVER_PORT = '8080';
 
@@ -34,6 +37,9 @@ var outputFile;
 var outputCssFile;
 
 if (env === 'build') {
+  plugins.push(new CopyWebpackPlugin([
+    {from: APPLICATION_BASEPATH + '/index.html', to: 'dist/index.html'}
+  ]));
   plugins.push(new UglifyJsPlugin({ minimize: true }));
 
   outputFile = YOUR_APPLICATIONS_NAME + '.min.js';
@@ -69,7 +75,7 @@ let config = {
           options: {
             presets: ['react', 'es2015']
           }
-        },
+        }
       },
       {
         test: /(\.jsx|\.js)$/,
@@ -100,7 +106,7 @@ let config = {
   devtool: devtools,
   plugins: plugins,
   devServer: {
-    contentBase: path.join(__dirname, 'example'),
+    contentBase: APPLICATION_BASEPATH,
     compress: true,
     port: DEV_SERVER_PORT
   }
