@@ -15,6 +15,18 @@ var YOUR_APPLICATIONS_NAME = 'app';
 // Modify this to change the dev server port.
 var DEV_SERVER_PORT = '8080';
 
+// PostCSS configuration.
+// Learn more about what it does here: http://postcss.org/
+var postcssConfig = {
+  loader: 'postcss-loader',
+  options: {
+    plugins: (loader) => [
+      require('autoprefixer')({ browsers: ['last 2 versions'] }),
+      require('cssnano')()
+    ]
+  }
+};
+
 var devtools = '';
 var plugins = [];
 var outputFile;
@@ -51,7 +63,7 @@ let config = {
       {
         test: /(\.jsx|\.js)$/,
         exclude: [/(node_modules|bower_components)/],
-        loader: 'babel-loader',
+        use: 'babel-loader',
         options: {
           presets: ['react', 'es2015']
         }
@@ -59,17 +71,20 @@ let config = {
       {
         test: /(\.jsx|\.js)$/,
         exclude: [/node_modules/],
-        loader: 'eslint-loader'
+        use: 'eslint-loader'
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?importLoaders=1'
-        })
+        use: ExtractTextPlugin.extract(env === 'dev' ?
+          [{loader: 'css-loader', options: {importLoaders: 1}}] :
+          [{loader: 'css-loader', options: {importLoaders: 1}}, postcssConfig])
       },
       {
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        use: ExtractTextPlugin.extract(env === 'dev' ?
+          ['css-loader', 'sass-loader'] :
+          ['css-loader', postcssConfig, 'sass-loader']
+        )
       }
     ]
   },
