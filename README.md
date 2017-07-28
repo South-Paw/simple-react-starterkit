@@ -53,6 +53,7 @@ Eventually you'll want to understand the environment though, but of course that 
 
 * `npm run dev` Builds the `src` directory and then starts a watch. Any changes within the `src` folder will be recompiled and you can just reload your browser window.
 * `npm run build` Builds a 'production' version of the bundles that can be deployed to a website.
+* `npm run test` Runs unit tests for your components.
 
 ## After setting up
 
@@ -69,8 +70,5 @@ If you have an issue with the project, please [create an issue for it](https://g
 If you think I've missed something or something can be done better, by all means [submit a pull request](https://github.com/South-Paw/simple-react-starterkit/pulls) or [raise an issue in the project](https://github.com/South-Paw/simple-react-starterkit/issues).
 
 ## License
+
 [MIT](https://github.com/South-Paw/simple-react-starterkit/blob/master/LICENSE)
-
-# TODO
-
-* Add/improve default example tests.

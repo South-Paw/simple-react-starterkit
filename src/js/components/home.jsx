@@ -17,13 +17,11 @@ class Home extends Component {
   render() {
     return (
       <div className='container'>
-        <h1 className='mt-3'>simple-react-starterkit</h1>
+        <h1 className='mt-3 mb-3'>simple-react-starterkit</h1>
         <p><strong>Awesome.</strong> If you're seeing this; that means you're ready to go.</p>
-        <p>While running the <code>npm run dev</code> command, every time you make a change webpack will recompile the
-          <code>src</code> folder.</p>
-        <p>You can then reload this page (<kbd>f5</kbd> or <kbd>ctrl</kbd> + <kbd>f5</kbd> to cache bust) and your app
-          will reload with the new build.</p>
-        <p>At this stage,</p>
+        <p>While running the <code>npm run dev</code> command, every time you make a change to
+          the <code>src</code> folder, webpack will recompile the app.</p>
+        <p>Next up...</p>
         <ul>
           <li>you may want to check the project's README for some next steps (I've also included some notes on other
             stuff there as well)</li>

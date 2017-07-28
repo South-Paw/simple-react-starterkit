@@ -1,18 +1,17 @@
 /* eslint-env node, mocha */
-
-import Component from '../../src/js/components/home.jsx';
-import TestUtils from 'react-dom/test-utils';
 import React from 'react';
+import TestUtils from 'react-dom/test-utils';
 
-describe('Given an instance of the Component', () => {
-  var component;
+import Home from '../../src/js/components/home.jsx';
 
-  describe('when we render the component', () => {
-    beforeEach(() => {
-      component = TestUtils.renderIntoDocument(<Component />);
-    });
-    it('should render a paragraph', () => {
-      var paragraph = TestUtils.scryRenderedDOMComponentsWithTag(component, 'p');
+describe('Given an instance of the Home component', () => {
+
+  describe('when the component is rendered', () => {
+
+    it('it should contain a paragraph', () => {
+      const component = TestUtils.renderIntoDocument(<Home />);
+
+      let paragraph = TestUtils.scryRenderedDOMComponentsWithTag(component, 'p');
 
       expect(paragraph).to.have.length.above(0, 'Expected to have element with tag <p>');
     });
