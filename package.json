@@ -1,19 +1,24 @@
 {
-  "name": "simple-react-startkit",
+  "name": "simple-react-starterkit",
   "version": "1.0.0",
   "description": "A dead simple react starter kit with React, Babel, Sass and Webpack.",
+  "keywords": [],
+  "homepage": "https://github.com/South-Paw/simple-react-starterkit",
+  "bugs": {
+    "url": "https://github.com/South-Paw/simple-react-starterkit/issues",
+    "email": "hello@southpaw.co.nz"
+  },
+  "license": "MIT",
   "author": {
     "name": "Alex Gabites",
     "email": "hello@southpaw.co.nz",
     "url": "http://southpaw.co.nz/"
   },
-  "homepage": "https://github.com/South-Paw/simple-react-starterkit",
-  "license": "MIT",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/South-Paw/simple-react-starterkit.git"
+    "url": "https://github.com/South-Paw/simple-react-starterkit"
   },
-  "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/cross-env WEBPACK_ENV=build ./node_modules/.bin/webpack",
@@ -65,5 +70,6 @@
     "watch": "^1.0.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
-  }
+  },
+  "private": true
 }

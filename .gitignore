@@ -7,12 +7,10 @@ npm-debug.log*
 # Dependencies
 /node_modules
 
-# npm lockfile.
-#
-# Ideally, you should include this on your own repo (to make sure your team
-# members have the same version of all packages), but we've decided not to
-# include it here since it's a starter kit. Do comment this out when you're
-# pushing to your own repo, though.
+# npm lockfile
+# Ideally, you should include this on your own repo (to make sure your team members have the same
+# version of all packages), but we've decided not to include it here since it's a starter kit.
+# We suggest commenting this out when you're pushing to your own repo though.
 /package-lock.json
 
 # Misc files
@@ -21,23 +19,6 @@ npm-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Code Igniter ignores
-application/cache/*
-!application/cache/index.html
-!application/cache/.htaccess
-
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
-
-composer.lock
-
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
-/vendor/
 
 # Any IDE files
 /nbproject/
