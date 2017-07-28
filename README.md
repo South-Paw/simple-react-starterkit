@@ -38,24 +38,22 @@ Eventually you'll want to understand the environment though, but of course that 
 1. Install [Node.js](https://nodejs.org) if you haven't already.
 2. Open your command line and navigate to the project. (['Shift + Right Click' in explorer -> 'Open Command Line/Powershell here'](http://i.imgur.com/6FJcydX.png))
 3. Do `npm install` to fetch [npm](https://www.npmjs.com/) dependencies.
-
-### Running locally
-
-1. Do `npm run dev` to start a local development server.
-2. On your browser, navigate to `localhost:8080`.
-3. You should (hopefully) get a page in your browser with some text on it and stuff.
-4. Start building your React app! (When you make changes, it will automatically be reflected on your browser.)
+4. Do `npm run dev` to start a local development server.
+5. On your browser, navigate to `localhost:8080`.
+6. You should (hopefully) get a page in your browser with some text on it and stuff.
+7. Start building your React app! (When you make changes, it will automagically be reflected on your browser.)
 
 ### Building for production
 
-1. When you've finished building your React app, do run `npm run build` to create a production-ready build of your React app. (**TODO:** possibly compress the compiled CSS/JS for the production build?)
-2. Put the generated files (should be inside the `dist/` folder) on your web server.
+1. When you've finished building your React app, do run `npm run build` to create a production-ready build of your React app.
+2. Put the generated files (the ones inside the `dist/` folder) on your web server.
 3. You're done!
 
 ## Commands
 
 * `npm run dev` Builds the `src` directory and then starts a watch. Any changes within the `src` folder will be recompiled and you can just reload your browser window.
 * `npm run build` Builds a 'production' version of the bundles that can be deployed to a website.
+* `npm run test` Runs unit tests for your components.
 
 ## After setting up
 
@@ -72,4 +70,5 @@ If you have an issue with the project, please [create an issue for it](https://g
 If you think I've missed something or something can be done better, by all means [submit a pull request](https://github.com/South-Paw/simple-react-starterkit/pulls) or [raise an issue in the project](https://github.com/South-Paw/simple-react-starterkit/issues).
 
 ## License
+
 [MIT](https://github.com/South-Paw/simple-react-starterkit/blob/master/LICENSE)
